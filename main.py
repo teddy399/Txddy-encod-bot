@@ -157,14 +157,14 @@ def handle_messages(message):
 
 if __name__ == "__main__":
     bot.infinity_polling()
+            else:
+        markup = types.InlineKeyboardMarkup()
         markup.add(
-            InlineKeyboardButton("🎬 Vidéo (1080p 8Mbps)", callback_data="mode_video"),
-            InlineKeyboardButton("🎵 Audio seul (MP3 320k)", callback_data="mode_audio")
+            types.InlineKeyboardButton("🎬 Vidéo (1080p 8Mbps)", callback_data="video"),
+            types.InlineKeyboardButton("🎵 Audio seul (MP3 320k)", callback_data="audio")
         )
-        bot.reply_to(message, "Que veux-tu faire avec ce fichier ?", reply_markup=markup)
-    else:
-        bot.reply_to(message, "Salut ! Balance-moi un lien Google Drive dès que tu veux extraire ou encoder. 👌")
+        bot.reply_to(message, "Que veux-tu faire avec ce lien ?", reply_markup=markup)
 
 if __name__ == "__main__":
-    print("🤖 Txddy_encod prêt sur Koyeb 24/24 !")
+    print("🤖 Txddy_encod prêt !")
     bot.infinity_polling()
